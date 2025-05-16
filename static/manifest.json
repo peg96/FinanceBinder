@@ -1,0 +1,33 @@
+{
+  "name": "Finance Binder - Gestione Conti Personali",
+  "short_name": "Finance Binder",
+  "description": "App di gestione finanziaria personale con raccoglitori personalizzati",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3",
+  "icons": [
+    {
+      "src": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/svgs/solid/wallet.svg",
+      "sizes": "48x48 72x72 96x96 128x128 256x256 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "orientation": "portrait",
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/svgs/solid/dashboard.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
+}

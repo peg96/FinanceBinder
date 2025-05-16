@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card login-card">
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-wallet icon-large text-primary"></i>
+                        <h2 class="mt-3">Finance Binder</h2>
+                        <p class="text-muted">Gestione finanziaria personale</p>
+                    </div>
+                    
+                    <form action="{{ url_for('login') }}" method="post">
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                <input type="password" class="form-control form-control-lg" id="password" name="password" required>
+                            </div>
+                            <div class="form-text">Password predefinita: 1234</div>
+                        </div>
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Accedi</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5>Come usare l'app su iPhone</h5>
+                    <ol>
+                        <li>Apri questa pagina in Safari</li>
+                        <li>Tocca <i class="fas fa-share-alt"></i> → "Aggiungi alla schermata Home"</li>
+                        <li>Dai un nome e tocca "Aggiungi"</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

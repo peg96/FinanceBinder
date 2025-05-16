@@ -1,0 +1,249 @@
+:root {
+    --primary-color: #a0c4ff;    /* Pastel blue */
+    --secondary-color: #bdb2ff;  /* Pastel purple */
+    --success-color: #a7f3d0;    /* Pastel green */
+    --danger-color: #fda4af;     /* Pastel red */
+    --warning-color: #fef3c7;    /* Pastel yellow */
+    --info-color: #9be1fb;       /* Pastel light blue */
+    --dark-color: #6b7280;       /* Pastel gray */
+    --light-color: #f5f5fa;      /* Pastel light grey */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 18px;
+    --btn-radius: 25px;
+    --card-radius: 24px;
+}
+
+/* Base Styles */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: var(--light-color);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-content {
+    flex: 1;
+}
+
+/* Header Styles */
+.app-header {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Footer Styles */
+.app-footer {
+    background-color: var(--light-color);
+    border-top: 1px solid #ddd;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 100%;
+    padding: 20px;
+}
+
+.login-card {
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.icon-large {
+    font-size: 3rem;
+}
+
+/* Dashboard */
+.dashboard-container {
+    padding-bottom: 20px;
+}
+
+.binder-card {
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    background-color: white;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.binder-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.binder-card .card-header {
+    background-color: var(--secondary-color);
+    color: white;
+    border-bottom: none;
+    border-top-left-radius: var(--card-radius) !important;
+    border-top-right-radius: var(--card-radius) !important;
+    padding: 1rem 1.25rem;
+}
+
+.binder-card .card-body {
+    padding: 1.5rem;
+}
+
+.binder-content {
+    display: none;
+}
+
+.binder-content.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.categories-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.category-badge .badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.category-badge .category-selector {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.category-badge .category-selector:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    margin-left: 5px;
+    font-size: 0.6rem;
+}
+
+.btn-close-white:hover {
+    opacity: 1;
+}
+
+/* Transactions Table */
+.transactions-table {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.transactions-table th {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.transactions-table td {
+    vertical-align: middle;
+}
+
+.transactions-table .badge {
+    font-weight: 500;
+    padding: 5px 8px;
+}
+
+/* Charts */
+.chart-container {
+    height: 200px;
+    margin-top: 10px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 576px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .transactions-table {
+        font-size: 0.85rem;
+    }
+    
+    .transactions-table td, .transactions-table th {
+        padding: 0.5rem;
+    }
+    
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* PWA iOS Optimizations */
+@supports (-webkit-touch-callout: none) {
+    /* iOS specific styles */
+    input,
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents iOS zoom on focus */
+    }
+    
+    .btn {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+}
+
+/* Utility Classes */
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-danger {
+    color: var(--danger-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
